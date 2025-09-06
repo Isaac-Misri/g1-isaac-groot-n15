@@ -1,2 +1,5 @@
 models
+modelv2
 datasets
+deployment/unitree_sdk2py/
+deployment/unitree_sdk2py_bridge.py

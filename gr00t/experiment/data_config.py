@@ -136,6 +136,45 @@ class Gr1ArmsOnlyDataConfig(BaseDataConfig):
 
 
 ###########################################################################################
+class UnitreeG1DataConfigs(BaseDataConfig):
+    video_keys = ["video.cam_right_high"]
+    state_keys = ["state.left_arm", "state.right_arm", "state.left_hand", "state.right_hand"]
+    action_keys = ["action.left_arm", "action.right_arm", "action.left_hand", "action.right_hand"]
+    language_keys = ["annotation.human.task_description"]
+    observation_indices = [0]
+    action_indices = list(range(16))
+
+    def modality_config(self) -> dict[str, ModalityConfig]:
+        video_modality = ModalityConfig(
+            delta_indices=self.observation_indices,
+            modality_keys=self.video_keys,
+        )
+
+        state_modality = ModalityConfig(
+            delta_indices=self.observation_indices,
+            modality_keys=self.state_keys,
+        )
+
+        action_modality = ModalityConfig(
+            delta_indices=self.action_indices,
+            modality_keys=self.action_keys,
+        )
+
+        language_modality = ModalityConfig(
+            delta_indices=self.observation_indices,
+            modality_keys=self.language_keys,
+        )
+
+        modality_configs = {
+            "video": video_modality,
+            "state": state_modality,
+            "action": action_modality,
+            "language": language_modality,
+        }
+
+        return modality_configs
+
+
 
 class UnitreeG1Test(BaseDataConfig):
     video_keys = [
@@ -230,7 +269,7 @@ class UnitreeG1Test(BaseDataConfig):
 ###########################################################################################
 
 class UnitreeG1DataConfig(BaseDataConfig):
-    video_keys = ["video.rs_view"]
+    video_keys = ["video.cam_right_high"]
     state_keys = ["state.left_arm", "state.right_arm", "state.left_hand", "state.right_hand"]
     action_keys = ["action.left_arm", "action.right_arm", "action.left_hand", "action.right_hand"]
     language_keys = ["annotation.human.task_description"]
@@ -878,6 +917,8 @@ class G1ArmsOnlyDataConfig():
 
 DATA_CONFIG_MAP = {
     "g1_arms_only": UnitreeG1Test(),
+    "g1_arms_only": UnitreeG1DataConfig(),
+
     "gr1_arms_waist": Gr1ArmsWaistDataConfig(),
     "gr1_arms_only": Gr1ArmsOnlyDataConfig(),
     "gr1_full_upper_body": Gr1FullUpperBodyDataConfig(),

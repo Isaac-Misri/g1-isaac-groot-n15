@@ -33,7 +33,7 @@ Two conda environments are required:
 Ensure you're using the `unitree_sim_env` conda environment:
 
 ```bash
-python sim_main.py --device cpu --enable_cameras --task Isaac-PickPlace-RedBlock-G129-Dex3-Joint --action_source dds --enable_dex3_dds --robot_type g129
+python sim_main.py --device cpu --enable_cameras --task Isaac-Stack-RgyBlock-G129-Dex3-Joint --action_source dds --enable_dex3_dds --robot_type g129
 ```
 
 ### Running the Inference System
@@ -43,14 +43,14 @@ Switch to the `gr00t` conda environment for the following commands:
 The inference service loads the model and processes joint/hand position data to generate predictions:
 
 ```bash
-python deployments/inference_service.py --model_path models --server
+python deployments/inference_service.py --model_path modelv2 --server
 ```
 
 #### 2. Run the Client
 The client reads joint positions from the robot/simulation, sends them to the inference service, receives predictions, and executes the next set of positions:
 
 ```bash
-python deployment/simulate_python/run.py
+python deployment/client_node.py.py
 ```
 
 #### 3. Monitor Camera Feed (Optional)

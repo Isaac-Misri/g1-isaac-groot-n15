@@ -247,8 +247,6 @@ training_args = TrainingArguments(
 )
 
 # %%
-import os
-os.environ["WANDB_API_KEY"] = "56071ec43a06b8d356a504b287546051d98b6470"
 import wandb
 wandb.login()
 
@@ -263,4 +261,3 @@ experiment = TrainRunner(
 )
 
 experiment.train()
-

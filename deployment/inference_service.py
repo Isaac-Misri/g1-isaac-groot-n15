@@ -15,7 +15,7 @@ if __name__ == "__main__":
         "--model_path",
         type=str,
         help="Path to the model checkpoint directory.",
-        default="./models",
+        default="./modelv2",
     )
     parser.add_argument(
         "--embodiment_tag",

@@ -17,9 +17,7 @@ from gr00t.data.dataset import ModalityConfig
 from gr00t.data.transform.base import ComposedModalityTransform
 from gr00t.data.transform import VideoToTensor, VideoCrop, VideoResize, VideoColorJitter, VideoToNumpy
 from gr00t.data.transform.state_action import StateActionToTensor, StateActionTransform
-from gr00t.data.transform.concat import ConcatTransform
-from gr00t.model.transforms import GR00TTransform
-
+from gr00t.data.transform.concat import ConcatTransform from gr00t.model.transforms import GR00TTransform
 embodiment_tag = EmbodimentTag.NEW_EMBODIMENT
 
 # Modality configs (same as training)
