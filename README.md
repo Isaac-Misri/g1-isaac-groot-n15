@@ -2,7 +2,7 @@
 
 ## Contact
 For questions or collaboration opportunities, please contact:
-📧 22751096@student.uwa.edu.au (Jalil)
+📧 jalil.inayathussain@gmail.com
 
 ## Overview
 This repository contains the implementation for a Master of Software Engineering research project focused on robotic manipulation using the Unitree G1 robot. The project integrates Isaac Sim simulation with GR00T models for pick-and-place tasks.
@@ -49,8 +49,13 @@ python deployments/inference_service.py --model_path modelv2 --server
 #### 2. Run the Client
 The client reads joint positions from the robot/simulation, sends them to the inference service, receives predictions, and executes the next set of positions:
 
+For simulation:
 ```bash
-python deployment/client_node.py.py
+python deployment/client_node.py -- sim
+```
+For physical deployment:
+```bash
+python deployment/client_node.py -- sim
 ```
 
 #### 3. Monitor Camera Feed (Optional)
@@ -66,7 +71,7 @@ python head_camera_view.py
 
 ## Contact
 For questions or collaboration opportunities, please contact:
-📧 22751096@student.uwa.edu.au
+📧 jalil.inayathussain@gmail.com
 
 ## Acknowledgments
 This project builds upon several open-source repositories:
