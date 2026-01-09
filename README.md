@@ -55,7 +55,7 @@ python deployment/client_node.py -- sim
 ```
 For physical deployment:
 ```bash
-python deployment/client_node.py -- sim
+python deployment/client_node.py
 ```
 
 #### 3. Monitor Camera Feed (Optional)
