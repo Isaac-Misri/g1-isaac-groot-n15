@@ -39,6 +39,21 @@ python sim_main.py --device cpu --enable_cameras --task Isaac-Stack-RgyBlock-G12
 ### Running the Inference System
 Switch to the `gr00t` conda environment for the following commands:
 
+Jan 9, 2026:
+create conda env g1-groot-deploy
+```bash
+conda create -n g1-gr00t-deploy python=3.10
+conda activate g1-gr00t-deploy
+pip install --upgrade setuptools
+cd <path/to/Isaac-GR00T>
+pip install -e .[base]
+pip install --no-build-isolation flash-attn==2.7.1.post4
+cd <path/to/unitree_sdk2_python> submodule
+pip install -e .
+pip install pyrealsense2
+pip install logging-mp
+```
+
 #### 1. Start the Inference Service
 The inference service loads the model and processes joint/hand position data to generate predictions:
 
