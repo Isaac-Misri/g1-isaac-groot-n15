@@ -1,5 +1,0 @@
-datasets
-deployment
-gr00t
-models
-output

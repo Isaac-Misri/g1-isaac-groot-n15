@@ -28,7 +28,8 @@ if __name__ == "__main__":
         type=str,
         help="The name of the data config to use.",
         choices=list(DATA_CONFIG_MAP.keys()),
-        default="g1_arms_only",
+        #default="g1_arms_only",
+        default="unitree_g1"
     )
 
     parser.add_argument("--port", type=int, help="Port number for the server.", default=5000)
@@ -118,7 +119,7 @@ if __name__ == "__main__":
             "state.right_hand": np.random.rand(1, 7),
 
             # Language modality
-            "annotation.human.task_description": ["pick up the object and place it on the table"],
+            "annotation.human.task_description": ["Pick up the red apple and place it on the plate"],
         }
 
         time_start = time.time()
