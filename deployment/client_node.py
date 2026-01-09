@@ -381,11 +381,13 @@ class Controller:
             "state.right_arm": right_arm_state,
             "state.left_hand": left_hand_state,
             "state.right_hand": right_hand_state,
-            "annotation.human.task_description": [
-                #"Stack the three cubic blocks on the desktop from bottom to top in the order of red, white, and black on the yellow tape affixed to the desktop."
-                #"Stack the three cubic blocks on the desktop from bottom to top in the order of red, white, and black on the desktop."
-                "place the red cube on the green plate"
-            ],
+            "annotation.human.task_description": ["Pick up the red apple and place it on the plate"]
+            # "annotation.human.task_description": [
+            #     #"Stack the three cubic blocks on the desktop from bottom to top in the order of red, white, and black on the yellow tape affixed to the desktop."
+            #     #"Stack the three cubic blocks on the desktop from bottom to top in the order of red, white, and black on the desktop."
+            #     "place the red cube on the green plate"
+
+            # ],
         }
 
     def _set_arm_commands(self, left_arm_action: np.ndarray, right_arm_action: np.ndarray):
