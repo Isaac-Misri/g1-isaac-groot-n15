@@ -30,7 +30,7 @@ from gr00t.eval.service import ExternalRobotInferenceClient
 from common.remote_controller import RemoteController, KeyMap
 from robotconfig import RobotConfig
 from realsense_camera import RealSenseCamera
-from camera_client import HeadCameraClient, CameraConfig
+from simulation_camera_client import HeadCameraClient, CameraConfig
 
 @dataclass
 class ControlConfig:
