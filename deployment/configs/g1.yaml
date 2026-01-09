@@ -32,7 +32,8 @@ arm_waist_joint2motor_idx: [12, 13, 14,
 
 left_arm: [15, 16, 17, 18, 19, 20, 21]
 
-right_arm: [22, 23, 24, 25, 26, 27, 28]
+# right_arm: [22, 23, 24, 25, 26, 27, 28]
+right_arm: [29, 30, 31, 32, 33, 34, 35]  # got these values from finetuned dataset
 
 left_hand: [0, 1, 2, 5, 6, 3, 4]
 
